@@ -1,23 +1,14 @@
-from flask import Flask
+from dotenv import load_dotenv
 from routes.server import server_routes
 from routes.user import user_routes
-from routes.errors import init_errorHandler as errorHandler
-from routes.errors import throw
-myApp = Flask(__name__)
+from init import myApp,init_routes
 
-#initalizes the error handler
-errorHandler(myApp)
+load_dotenv() #loads the env
 
-# middleware to pass all 'server' requests to server route
-myApp.register_blueprint(server_routes, url_prefix='/server')
+#i can probably make a function later on to programmatically get all of the route names and put em in a dictionary.
+routes = {"/user":user_routes,"/chat":server_routes}
+init_routes(routes,myApp)
 
-# middleware to pass all 'user' requests to the user route
-myApp.register_blueprint(user_routes, url_prefix='/user')
-
-# if neither of the middlewares of activated, the route could not be located
-@myApp.route('/<path:path>', methods=['GET', 'POST'])
-@myApp.route('/', methods=['GET', 'POST'])
-def not_found(path): throw(404)
-
+# will run the file if executed here
 if (__name__ == "__main__"): 
     myApp.run(debug=True)
