@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from routes.server import server_routes
 from routes.user import user_routes
-from init import myApp,init_routes
+from src.init import myApp,init_routes
 
 load_dotenv() #loads the env
 

@@ -5,7 +5,7 @@ from flask import Flask,Blueprint
 from typing import Dict
 # from routes.server import server_routes
 # from routes.user import user_routes
-from utils import throw
+from src.utils import throw
 from flask import jsonify
 from werkzeug.exceptions import HTTPException
 import logging

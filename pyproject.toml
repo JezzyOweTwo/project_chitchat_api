@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "project_chitchat_api", from = "src"}]
+packages = [{include = "src", from = "."}]
 
 
 [build-system]

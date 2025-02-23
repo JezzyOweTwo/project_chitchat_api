@@ -1,4 +1,4 @@
-from utils import throw
+from src.utils import throw
 from typing import Dict, Any
 
 def bodyValidator(requiredFields:list[str],body) -> Dict[str, Any]:  

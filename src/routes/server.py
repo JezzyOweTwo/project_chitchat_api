@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask_socketio import emit
 from middleware.validator import throw
 from random import randint
-from init import myApp,db,socketio
+from src.init import myApp,db,socketio
 server_routes = Blueprint('server_routes', __name__)
 
 #returns a list of all active websocket connections attached to the API
