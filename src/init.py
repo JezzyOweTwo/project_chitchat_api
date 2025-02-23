@@ -44,7 +44,7 @@ def init_errorHandler(myApp):
         }
         return jsonify(message),e.code
     
-load_dotenv()                   #loads the env
+load_dotenv()                   # loads the env
 myApp =  init_flask()           # inits the app
 socketio = init_socketIO(myApp) # inits socketIO
 init_errorHandler(myApp)        # inits errorHandler
