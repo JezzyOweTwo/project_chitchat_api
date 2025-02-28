@@ -1,12 +1,9 @@
 **Installation Guide**
-1. In Command Prompt or Windows Powershell, naviagate to the location where you want this project to be saved using the 'cd' command.
-2. Once you have found the location, clone the repository by using 'git clone https://github.com/JezzyOweTwo/project_chitchat_api.git'
+1. Locate the directory where you want to install the project. Clone the repository by typing 'git clone https://github.com/JezzyOweTwo/project_chitchat_api.git'
 3. Navigate into the project by typing cd ./project_chitchat_api
-4. Type 'set PYTHONPATH=src' into the terminal
-5. Ensure you have the poetry package manager installed. If not, visit https://python-poetry.org/docs/#installing-with-pipx
-6. Once inside the project, type 'poetry install' to install all neccesary dependencies. 
-7. type 'poe start' to run the project.
-
+4. Ensure you have both Python [Installation](https://wiki.python.org/moin/BeginnersGuide/Download) and the poetry package manager [Installation](https://python-poetry.org/docs/#installing-with-pipx).
+6. Type 'poetry install' to install all neccesary dependencies. 
+7. Type 'poetry run python src/myApp/main.py'
 Please note a .env file will need to be provided in order to get the project to work as intended.  
 
 **Development Guide**
