@@ -1,6 +1,6 @@
-from src.utils import throw
+from myApp.utils import throw
 from flask import request
-from src.init import db
+from myApp.init import db
 from middleware.validator import headValidator as validator
 from datetime import datetime,timedelta
 import jwt

@@ -17,9 +17,16 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "src", from = "."}]
+
+packages = [    
+    { include = "myApp", from = "src" },
+    { include = "test", from = "src" }
+]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+start = "set PYTHONPATH=src"

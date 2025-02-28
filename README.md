@@ -5,7 +5,7 @@
 4. Type 'set PYTHONPATH=src' into the terminal
 5. Ensure you have the poetry package manager installed. If not, visit https://python-poetry.org/docs/#installing-with-pipx
 6. Once inside the project, type 'poetry install' to install all neccesary dependencies. 
-7. type 'poetry run ./src/init.py' to run the project.
+7. type 'poe start' to run the project.
 
 Please note a .env file will need to be provided in order to get the project to work as intended.  
 
@@ -16,4 +16,4 @@ Yo, I have no clue why but poetry and Visual Studio Code DO NOT play nice on eit
 3. 'poetry install'
 4. 'poetry env activate'
 5. Ctrl + Shift + P -> 'Python:Select Interpreter' -> use the path from step 2
-6. Close and reopen Vscode
+6. Close and reopen VS Code
