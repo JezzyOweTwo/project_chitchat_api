@@ -1,5 +1,5 @@
 from redis import Redis
-from flask_socketio import SocketIO
+from dotenv import load_dotenv
 import os
 from flask import Flask,Blueprint
 from typing import Dict
@@ -9,7 +9,7 @@ from myApp.utils import throw
 from flask import jsonify
 from werkzeug.exceptions import HTTPException
 import logging
-from dotenv import load_dotenv
+import socketio
 
 def init_database() -> Redis: 
    return Redis(os.getenv("SERVER_URL"),os.getenv("SERVER_PORT"))
@@ -23,9 +23,6 @@ def init_routes(routes:Dict[str,Blueprint],myApp)-> None:
     @myApp.route('/<path:path>', methods=['GET', 'POST','PUT','DELETE'])
     @myApp.route('/', methods=['GET', 'POST','PUT','DELETE'])
     def not_found(path): throw(404)
-
-def init_socketIO(myApp) -> SocketIO:
-    return SocketIO(myApp)
 
 def init_flask() -> Flask:
     return Flask(__name__) #intantiates the Flask server
@@ -46,6 +43,5 @@ def init_errorHandler(myApp):
     
 load_dotenv()                   # loads the env
 myApp =  init_flask()           # inits the app
-socketio = init_socketIO(myApp) # inits socketIO
 init_errorHandler(myApp)        # inits errorHandler
 db = init_database()            # inits redis

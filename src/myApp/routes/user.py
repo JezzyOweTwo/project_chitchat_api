@@ -1,7 +1,7 @@
 from flask import Blueprint,request,jsonify
-from middleware.validator import bodyValidator as validator
-from middleware.authenticator import userAuth as auth
-from middleware.authenticator import idGenerator
+from myApp.middleware.validator import bodyValidator as validator
+from myApp.middleware.authenticator import userAuth as auth
+from myApp.middleware.authenticator import idGenerator
 user_routes = Blueprint('user_routes', __name__)
 
 # protected route returning all connections active websocket connections
